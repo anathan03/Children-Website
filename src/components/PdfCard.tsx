@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { FileText, Download, Trash2 } from 'lucide-react';
 
@@ -33,7 +33,7 @@ const PdfCard: React.FC<PdfCardProps> = ({ id, fileName, fileUrl, onDelete }) =>
         </Button>
         <Button
           onClick={() => onDelete(id)}
-          variant="destructive"
+          variant="destructive" // Ensure 'destructive' variant is correctly defined in Button component
           className="bg-red-500 hover:bg-red-600 text-white text-sm py-2 rounded-full"
         >
           <Trash2 className="w-4 h-4" />
