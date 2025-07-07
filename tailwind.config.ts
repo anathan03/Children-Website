@@ -18,9 +18,6 @@ export default {
       },
     },
     extend: {
-      fontFamily: {
-        fredoka: ['Fredoka', 'sans-serif'],
-      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -65,13 +62,6 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        // Custom kid-friendly pastel colors
-        'pastel-blue': 'hsl(200 80% 85%)',
-        'pastel-yellow': 'hsl(50 100% 85%)',
-        'pastel-peach': 'hsl(15 80% 85%)',
-        'pastel-mint': 'hsl(150 60% 85%)',
-        'pastel-pink': 'hsl(330 80% 90%)',
-        'pastel-purple': 'hsl(270 60% 90%)',
       },
       borderRadius: {
         lg: "var(--radius)",
