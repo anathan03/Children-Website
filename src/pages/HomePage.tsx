@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, FormEvent } from 'react';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -7,6 +7,34 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Palette, Puzzle, Award, CheckCircle, ShieldCheck, Quote } from 'lucide-react';
 
 const HomePage: React.FC = () => {
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        form.reset(); // Clear the form fields
+      } else {
+        // Handle errors, e.g., show an error toast
+        console.error('Form submission failed');
+      }
+    } catch (error) {
+      console.error('Network error:', error);
+    }
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-pastel-blue to-pastel-mint">
       <Header />
@@ -64,21 +92,34 @@ const HomePage: React.FC = () => {
         {/* Try a Free Sample Section */}
         <section className="bg-pastel-yellow p-8 rounded-3xl shadow-xl text-center mb-12 border-4 border-pastel-peach">
           <h2 className="text-3xl md:text-4xl font-extrabold text-white drop-shadow-lg mb-4">
-            Try a Free Sample!
+            Get a Free Sample Coloring Page!
           </h2>
           <p className="text-lg md:text-xl text-white font-semibold mb-6">
-            Enter your email to get a sneak peek of our amazing bundle!
+            Enter your name and email to get a sneak peek of our amazing bundle!
           </p>
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 max-w-md mx-auto">
-            <Input
-              type="email"
-              placeholder="Your Email Address"
-              className="flex-grow p-3 rounded-full border-2 border-white focus:border-pastel-purple focus:ring-2 focus:ring-pastel-purple text-gray-800 placeholder-gray-500 shadow-inner"
-            />
-            <Button className="bg-pastel-red hover:bg-pastel-purple text-white text-lg font-bold py-3 px-6 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105">
-              Get Sample
-            </Button>
-          </div>
+          {submitted ? (
+            <p className="text-white text-2xl font-bold">Thank you for signing up! Check your email for the sample.</p>
+          ) : (
+            <form onSubmit={handleSubmit} action="https://formspree.io/f/mnnzavyd" method="POST" className="flex flex-col sm:flex-row justify-center items-center gap-4 max-w-md mx-auto">
+              <Input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                className="flex-grow p-3 rounded-full border-2 border-white focus:border-pastel-purple focus:ring-2 focus:ring-pastel-purple text-gray-800 placeholder-gray-500 shadow-inner"
+                required
+              />
+              <Input
+                type="email"
+                name="email"
+                placeholder="Your Email Address"
+                className="flex-grow p-3 rounded-full border-2 border-white focus:border-pastel-purple focus:ring-2 focus:ring-pastel-purple text-gray-800 placeholder-gray-500 shadow-inner"
+                required
+              />
+              <Button type="submit" className="bg-pastel-red hover:bg-pastel-purple text-white text-lg font-bold py-3 px-6 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105">
+                Get Sample
+              </Button>
+            </form>
+          )}
           <p className="text-sm text-white mt-4">
             *No spam, just fun!
           </p>
