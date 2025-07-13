@@ -1,15 +1,32 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { MadeWithDyad } from "@/components/made-with-dyad";
+import { Facebook, Instagram, Twitter } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-pastel-mint p-4 shadow-lg flex flex-col items-center justify-center rounded-t-3xl mt-8">
-      <a href="https://www.etsy.com/shop/YourEtsyShop" target="_blank" rel="noopener noreferrer" className="mb-4">
+    <footer className="bg-pastel-mint p-6 shadow-lg flex flex-col items-center justify-center rounded-t-3xl mt-8">
+      <a href="https://www.etsy.com/shop/studyflowco/?etsrc=sdt" target="_blank" rel="noopener noreferrer" className="mb-6">
         <Button className="bg-pastel-yellow hover:bg-pastel-peach text-white text-lg md:text-xl font-bold py-3 px-6 rounded-full shadow-xl transition-all duration-300 transform hover:scale-105">
           Visit My Etsy Shop!
         </Button>
       </a>
+
+      <div className="flex space-x-6 mb-6">
+        <a href="#" className="text-white hover:text-pastel-yellow transition-colors duration-300">
+          <Facebook size={32} />
+        </a>
+        <a href="#" className="text-white hover:text-pastel-yellow transition-colors duration-300">
+          <Instagram size={32} />
+        </a>
+        <a href="#" className="text-white hover:text-pastel-yellow transition-colors duration-300">
+          <Twitter size={32} />
+        </a>
+      </div>
+
+      <p className="text-white text-sm mb-4">
+        &copy; {new Date().getFullYear()} Animal Activity Zone. All rights reserved.
+      </p>
       <MadeWithDyad />
     </footer>
   );

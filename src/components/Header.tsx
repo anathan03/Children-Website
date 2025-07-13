@@ -1,5 +1,4 @@
 import React from 'react';
-import { Button } from "@/components/ui/button";
 import { Link } from 'react-router-dom';
 
 const Header: React.FC = () => {
@@ -8,11 +7,35 @@ const Header: React.FC = () => {
       <Link to="/" className="text-white text-4xl md:text-5xl font-extrabold text-center mb-4 md:mb-0 drop-shadow-md">
         Animal Activity Zone!
       </Link>
-      <a href="https://www.etsy.com/shop/YourEtsyShop" target="_blank" rel="noopener noreferrer">
-        <Button className="bg-pastel-peach hover:bg-pastel-pink text-white text-lg md:text-xl font-bold py-3 px-6 rounded-full shadow-xl transition-all duration-300 transform hover:scale-105">
-          Visit My Etsy Shop!
-        </Button>
-      </a>
+      <nav>
+        <ul className="flex flex-wrap justify-center gap-4 md:gap-6">
+          <li>
+            <Link to="/" className="text-white text-lg md:text-xl font-bold hover:text-pastel-yellow transition-colors duration-300">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/whats-inside" className="text-white text-lg md:text-xl font-bold hover:text-pastel-yellow transition-colors duration-300">
+              What’s Inside
+            </Link>
+          </li>
+          <li>
+            <Link to="/reviews" className="text-white text-lg md:text-xl font-bold hover:text-pastel-yellow transition-colors duration-300">
+              Reviews
+            </Link>
+          </li>
+          <li>
+            <Link to="/faq" className="text-white text-lg md:text-xl font-bold hover:text-pastel-yellow transition-colors duration-300">
+              FAQ
+            </Link>
+          </li>
+          <li>
+            <Link to="/contact" className="text-white text-lg md:text-xl font-bold hover:text-pastel-yellow transition-colors duration-300">
+              Contact
+            </Link>
+          </li>
+        </ul>
+      </nav>
     </header>
   );
 };
