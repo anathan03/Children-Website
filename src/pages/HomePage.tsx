@@ -50,7 +50,7 @@ const HomePage: React.FC = () => {
           </p>
           <Button
             asChild
-            className="bg-pastel-yellow hover:bg-pastel-peach text-white text-lg md:text-xl font-bold py-3 px-8 rounded-full shadow-xl transition-all duration-300 transform hover:scale-105"
+            className="bg-pastel-yellow hover:bg-pastel-peach text-black text-lg md:text-xl font-bold py-3 px-8 rounded-full shadow-xl transition-all duration-300 transform hover:scale-105"
           >
             <a href="https://www.etsy.com/shop/studyflowco/?etsrc=sdt" target="_blank" rel="noopener noreferrer">
               Buy on Etsy <span className="ml-2 text-sm">(Limited-Time Price!)</span>
