@@ -10,12 +10,6 @@ const Footer: React.FC = () => {
         <Button className="bg-pastel-yellow hover:bg-pastel-peach text-white text-lg md:text-xl font-bold py-3 px-6 rounded-full shadow-xl transition-all duration-300 transform hover:scale-105">
           Visit My Etsy Shop!
         </Button>
-      </a>
-
-      
-        </a>
-      </div>
-
       <p className="text-white text-sm mb-4">
         &copy; {new Date().getFullYear()} Animal Activity Zone. All rights reserved.
       </p>
