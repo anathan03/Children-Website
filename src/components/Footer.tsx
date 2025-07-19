@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
           Visit My Etsy Shop!
         </Button>
       </a> {/* Closing the anchor tag here */}
-      <p className="text-white text-sm mb-4">
+      <p className="text-blacl text-sm mb-4">
         &copy; {new Date().getFullYear()} Animal Activity Zone. All rights reserved.
       </p>
       <MadeWithDyad />
