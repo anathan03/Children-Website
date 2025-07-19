@@ -12,15 +12,7 @@ const Footer: React.FC = () => {
         </Button>
       </a>
 
-      <div className="flex space-x-6 mb-6">
-        <a href="#" className="text-white hover:text-pastel-yellow transition-colors duration-300">
-          <Facebook size={32} />
-        </a>
-        <a href="#" className="text-white hover:text-pastel-yellow transition-colors duration-300">
-          <Instagram size={32} />
-        </a>
-        <a href="#" className="text-white hover:text-pastel-yellow transition-colors duration-300">
-          <Twitter size={32} />
+      
         </a>
       </div>
 
