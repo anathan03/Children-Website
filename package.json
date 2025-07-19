@@ -1,3 +1,7 @@
+git add pnpm-lock.yaml
+git commit -m "Update pnpm-lock.yaml to match dependencies"
+git push origin main
+
 {
   "name": "vite_react_shadcn_ts",
   "private": true,
