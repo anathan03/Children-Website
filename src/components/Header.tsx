@@ -35,10 +35,14 @@ const Header: React.FC = () => {
             </Link>
             </li>
           <li>
-          <Link to="/animal matching game"
-          classname="text-white text-lg md:text-xl font-bold hover:text-pastel-yellow transition-colors duration-300">
+          <a
+            href="https://animalmatching.netlify.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white text-lg md:text-xl font-bold hover:text-pastel-yellow transition-colors duration-300"
+          >
              Animal Matching Game
-          </Link>
+          </a>
           </li>
         </ul>
       </nav>
