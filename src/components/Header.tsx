@@ -33,6 +33,13 @@ const Header: React.FC = () => {
             <Link to="/contact" className="text-white text-lg md:text-xl font-bold hover:text-pastel-yellow transition-colors duration-300">
               Contact
             </Link>
+            </li>
+          <li>
+          <Link to="/animal matching game"
+          classname="text-white text-lg md:text-xl font-bold hover:text-pastel-yellow transition-colors duration-300">
+             Animal Matching Game
+          </Link>
+        
           </li>
         </ul>
       </nav>
