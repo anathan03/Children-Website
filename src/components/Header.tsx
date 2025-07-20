@@ -39,7 +39,6 @@ const Header: React.FC = () => {
           classname="text-white text-lg md:text-xl font-bold hover:text-pastel-yellow transition-colors duration-300">
              Animal Matching Game
           </Link>
-        
           </li>
         </ul>
       </nav>
